@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vijaya Varma</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(to right,#ffffff 60%, #f8caca 40%);
+  color:#333;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 8%;
+}
+
+nav h2{color:#0ea5a4;}
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:#0ea5a4;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 8%;
+}
+
+.hero-text h1{
+  font-size:3.5rem;
+}
+
+.hero-text span{color:#0ea5a4;}
+
+.hero-text p{
+  margin:15px 0;
+  color:#555;
+  max-width:400px;
+}
+
+.btn{
+  padding:12px 20px;
+  border-radius:30px;
+  margin-right:10px;
+  text-decoration:none;
+}
+
+.primary{background:#ff6b6b;color:white;}
+.secondary{background:#e5e7eb;color:#333;}
+
+/* SOCIAL */
+.social{
+  margin-top:20px;
+}
+
+.social a{
+  text-decoration:none;
+  color:black;
+}
+
+.social i{
+  margin-right:10px;
+  background:#eee;
+  padding:10px;
+  border-radius:50%;
+}
+
+.social i:hover{
+  background:#0ea5a4;
+  color:white;
+  transition:0.3s;
+}
+
+/* IMAGE FIX */
+.hero-img{
+  position:relative;
+  width:360px;
+  height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* CIRCLE BACKGROUND */
+.circle{
+  width:100%;
+  height:100%;
+  background:#0ea5a4;
+  border-radius:50%;
+  position:absolute;
+  z-index:1;
+}
+
+/* 🔥 PERFECT IMAGE FIT */
+.hero-img img{
+  position:absolute;
+  width:280px;
+  height:340px;
+  object-fit:cover;
+  bottom:0;          
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+}
+/* BADGES */
+.badge{
+  position:absolute;
+  background:white;
+  padding:8px 14px;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  font-size:14px;
+  z-index:3;
+}
+
+.projects-badge{
+  bottom:-15px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.freelance{
+  top:30px;
+  right:-30px;
+}
+/* ABOUT */
+.about{
+  margin:50px 8%;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  display:flex;
+  justify-content:space-between;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.about-right{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.info{
+  background:#f1f5f9;
+  padding:10px;
+  border-radius:10px;
+}
+
+/* SKILLS */
+.skills{
+  margin:50px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.skill{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.bar{
+  height:6px;
+  background:#ddd;
+  margin-top:10px;
+  border-radius:10px;
+}
+
+.fill{
+  height:100%;
+  background:#0ea5a4;
+  border-radius:10px;
+}
+
+/* PROJECTS */
+.projects{
+  margin:50px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.project{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.project img{
+  width:100%;
+}
+
+.project div{
+  padding:15px;
+}
+
+/* CONTACT */
+.cta{
+  margin-top:50px;
+  background:#111827;
+  color:white;
+  padding:30px 8%;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px;
+}
+/* CERTIFICATIONS */
+.certifications{
+  margin:60px 8%;
+}
+
+.certifications h2{
+  margin-bottom:20px;
+  color:#0ea5a4;
+}
+
+/* GRID */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.cert-card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+.cert-card:hover{
+  transform:translateY(-10px);
+}
+/* IMAGE */
+.cert-card img{
+  width:100%;
+  height:auto;         
+  object-fit:contain;   
+  background:#fff;
+  padding:10px;
+}
+/* TEXT */
+.cert-info{
+  padding:15px;
+}
+
+.skill img{
+  width:50px;
+  height:50px;
+  margin-bottom:10px;
+}
+
+/* Center everything nicely */
+.skill{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.skill{
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:translateY(-10px);
+}
+/*project*/
+.projects-section{
+  margin:60px 8%;
+}
+
+.projects-section h2{
+   margin-bottom:20px;
+  color:#0ea5a4;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>VV</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+<div class="hero-text">
+  <h1>Hy! I Am <br><span>Vijaya Varma</span></h1>
+  <p>I build intelligent systems and modern web applications using Python, Java, React.js and Node.js.</p>
+
+  <a href="#contact" class="btn primary">Let's Talk</a>
+  <a href="#projects" class="btn secondary">View My Work</a>
+
+  <div class="social">
+    <a href="https://www.linkedin.com/in/vijaya-varma-r-2115a32a1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/vijayavarmar14" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/v_a_r_m_a_0_0_7?igsh=YzMxcGZkbmJ1N21t" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:vijayavarmar14@gmail.com"><i class="fa fa-envelope"></i></a>
+  </div>
+</div>
+
+<div class="hero-img">
+  <div class="circle"></div>
+  <img src="1000240436.png">
+
+  <div class="badge projects-badge">5+ Projects</div>
+  <div class="badge freelance">Available for Freelance</div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<div id="about" class="about">
+  <div>
+    <h3>About Me</h3>
+    <p>I’m an engineering student passionate about AI and Full Stack Development.</p>
+  </div>
+
+  <div class="about-right">
+    <div class="info">Name: Vijaya Varma</div>
+    <div class="info">Phone: 8072601841</div>
+    <div class="info">Email:vijayavarmar14@gmail.com</div>
+    <div class="info">Location: India</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="skills">
+
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+    <h4>Python</h4>
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+    <h4>Java</h4>
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+    <h4>React</h4>
+    <div class="bar"><div class="fill" style="width:88%"></div></div>
+  </div>
+
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+    <h4>Node.js</h4>
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+    <h4>MySQL</h4>
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
+
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="projects-section">
+
+  <h2>My Projects</h2>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="project/online_voting.png">
+      <div>
+        <h4>Online Voting System</h4>
+        <p>Secure one time voting system and admin panel.</p>
+        <!--<a href="#" target="_blank">🔗 Demo</a> |-->
+        <a href="https://github.com/vijayavarmar14/Online-voting-system" target="_blank">💻 Code</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="project/face_attendance.png">
+      <div>
+        <h4>Face Attendance System</h4>
+        <p>Face recognition attendance using python.</p>
+        <!--<a href="#" target="_blank">🔗 Demo</a> |-->
+        <a href="https://github.com/vijayavarmar14/Face-Recognition-Based-Attendance-Monitoring-System" target="_blank">💻 Code</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="project/event.png">
+      <div>
+        <h4>Event Management System</h4>
+        <p>Manage events, users, and schedules.</p>
+        <!--<a href="#" target="_blank">🔗 Demo</a> |-->
+        <a href="https://github.com/vijayavarmar14/Event_Management-System" target="_blank">💻 Code</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CERTIFICATIONS -->
+<div id="certifications" class="certifications">
+
+  <h2>My Certifications</h2>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="certifications/Livewire.jpg">
+      <div class="cert-info">
+        <h4>MERN Stack Development</h4>
+        <p>Completed MERN stack development course at Livewire</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/Reactjs.jpg">
+      <div class="cert-info">
+        <h4>React Js</h4>
+        <p>Completed Web application development using React Js</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/Process_Mining.jpg">
+      <div class="cert-info">
+        <h4>Process Mining</h4>
+        <p>Academic process mining fundamentals in Celonis</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div id="certifications" class="certifications">
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="certifications/Yoga1.jpg">
+      <div class="cert-info">
+        <h4>Yoga for youth empowerment</h4>
+        <p>Completed yoga training for youth empowerment</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/Yoga2.jpg">
+      <div class="cert-info">
+        <h4>Yoga for youth empowerment</h4>
+        <p>Completed yoga training for youth empowerment</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/Achivement.jpg">
+      <div class="cert-info">
+        <h4>Achievement</h4>
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div id="certifications" class="certifications">
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="certifications/yugam.jpg">
+      <div class="cert-info">
+        <h4>Yugam 2026</h4>
+        <p>IIYC - Inspire India Youth Conclave</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/texperia.jpg">
+      <div class="cert-info">
+        <h4>Texperia 2026</h4>
+        <p>App pitching</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <img src="certifications/Yuva.jpg">
+      <div class="cert-info">
+        <h4>Yuva Techfest'25</h4>
+        <p>Poster Presentation</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="cta">
+  <h3>Let's work together</h3>
+  <p>📞 8072601841</p>
+</div>
+
+<footer>
+  © 2026 Vijaya Varma
+</footer>
+
+</body>
+</html>
