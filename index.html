@@ -311,6 +311,91 @@ footer{
 }
 
 
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px){
+
+  /* NAVBAR */
+  nav{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  /* HERO SECTION */
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 5%;
+  }
+
+  .hero-text h1{
+    font-size:2rem;
+  }
+
+  .hero-text p{
+    max-width:100%;
+  }
+
+  /* IMAGE */
+  .hero-img{
+    width:220px;      /* reduce circle size */
+    height:220px;
+    margin-top:20px;
+  }
+
+  .hero-img img{
+    width:180px;      /* reduce image size */
+    height:220px;
+  }
+
+  /* BADGES */
+  .projects-badge{
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  .freelance{
+    top:-10px;          
+    right:0;
+    font-size:12px;      
+    padding:6px 10px;
+  }
+
+  /* ABOUT */
+  .about{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .about-right{
+    grid-template-columns:1fr;
+  }
+
+  /* SKILLS */
+  .skills{
+    grid-template-columns:1fr 1fr;
+  }
+
+  /* PROJECTS */
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* BUTTONS */
+  .btn{
+    display:block;
+    margin:10px auto;
+  }
+
+}
+
+
 </style>
 </head>
 
